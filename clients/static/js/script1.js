@@ -1,0 +1,1 @@
+alert("Hello, Welcome to JS on django!!")

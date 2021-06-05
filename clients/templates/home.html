@@ -1,0 +1,52 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+  <meta charset="UTF-8">  
+  <title>Index</title>  
+    
+  
+</head>  
+  <body>
+  
+    <h1>TEMPLATES!!!
+    	<a href='http://127.0.0.1:8000/setsession/'>SETSESSION</a>
+    </h1>
+    <h2>My name is: {{myName}}</h2>  
+  	
+  	{% load static %}
+  	
+  	<link href="{% static '/css/style1.css' %}" rel="stylesheet">
+  	
+    <image src="{% static '/cat.jpg' %}" alt="My image" height="100px" width="200px"> 
+  	
+  	<form method="POST" class="post-form" enctype="multipart/form-data">
+  	  {% csrf_token %}
+  	  
+  	  {{ fom1.as_table }}
+  	  {{ att.as_p }}
+  	  
+  	  {% if pre_url == 'http://271.0.0.1:8000/form3/' %}
+  	  	<li>YOU SHOULD INPUT ALL INFO</li>
+  	  {% endif %}
+  	  
+  	  {{ fom3.as_p }}
+  	  
+  	  
+  	  <button type="submit" class="save btn btn-default">Save</button>
+  	</form>
+  	
+  	{% csrf_token %}
+  	{% for key, value in DT.items %}
+  		<li>{{ key }} - {{value}}</li>
+  	{% endfor %}
+  	
+  	{% csrf_token %}
+  	{% for key, value in response.items %}
+  		<li>{{ key }} - {{value}}</li>
+  	{% endfor %}
+  	
+  	
+  	
+  	
+  </body>  
+</html>  
